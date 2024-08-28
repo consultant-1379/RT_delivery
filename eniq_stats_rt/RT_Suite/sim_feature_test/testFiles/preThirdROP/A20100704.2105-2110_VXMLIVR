@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<mdc xmlns:HTML="http://www.w3.org/TR/REC-xml">
+<mfh>
+<ffv>1</ffv>
+<sn>VIVR</sn>
+<st>IVR</st>
+<vn>Ericsson</vn>
+<cbt>20100704210519</cbt>
+</mfh>
+<md>
+<neid>
+<neun>VXMLIVR</neun>
+<nedn>IVR-VXMLIVR</nedn>
+</neid>
+<mi>
+<mts>20100704211019</mts>
+<gp>300</gp>
+<mt>BALANCEENQUIRY_NUMBER_OF_ATTEMPTS</mt>
+<mt>BALANCEENQUIRY_NUMBER_OF_BACKANDACCESS</mt>
+<mv>
+<moid>DELHI-IVR</moid>
+<r>0</r>
+<r>0</r>
+</mv>
+</mi>
+</md>
+<mff>
+<ts>20100704211019</ts>
+</mff>
+</mdc>

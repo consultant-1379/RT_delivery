@@ -1,0 +1,81 @@
+#############################################################
+#                  INPUT FILE FOR RT-SCRIPT                 #
+#                   Updated on 30-08-2011                   #
+#############################################################
+
+COMPARE_BASELINE /net/159.107.177.67/export/SW_LOCATION/ENIQ_STATS/ENIQ_STATS/14.0.7/eniq_base_sw/
+#READLOG      
+
+##################### ADMIN UI TEST CASES ###################                                  
+
+#RESIZEDB                                                   #USE THIS IF REQUIRED
+HELP
+VERIFY_EXECUTABLES
+SCHEDULERCLI
+ENGINECLI
+WEBSERVERCLI
+LICMGRCLI
+LICSERVCLI
+DWHDBCLI
+REPDBCLI
+RUNCMDLINE
+SYSTEMSTATUS
+ENGINESTATUS
+SCHEDULERSTATUS
+LICSERVSTATUS
+VERIFY_DIRECTORIES
+VERIFY_ADMIN_SCRIPTS
+DISKSPACE
+ACTIVE_PROCS
+SHOW_AGG_FUTURE_DATES
+PRE
+VERIFY_UNIVERSES
+VERIFY_BOREPORTS
+VERIFY_ALARMS
+#Create_Snapshots #use for blade
+Create_Rack_Snapshots #use for rack
+############ LOAD TOPOLOGY TEST CASES USING EPFG ############
+
+EPFGLOADTOPOLOGY
+EPFGUPDATE_TOPOLOGY
+
+#############################################################
+#               LOAD PM-FILES TEST CASES                    #
+#   IF THE FOLLOWING DATE AND TIME IS NOT EDITED PROPERLY   #
+#   SCRIPT WILL GENERATE DATA FOR YESTERDAY DATE.           #
+#############################################################
+
+EPFG START TIME 30-07-2013-10:00 
+EPFG STOP TIME 30-07-2013-11:00
+EPFG NUMBER OF NODES 1
+EPFG DATAGENDT DISABLE ALL
+
+#############################################################
+#  SELECT THE REQUIRED TP NAME FROM THIS LIST TO LOAD PM    #
+#                FOR SELECTED TP ONLY                       #
+#############################################################
+# EBA-EBSG,SASN,SASN-SARA,GGSN,CUDB,MSC-APG,MSC-IOG,MSC-BC, #
+# HLR-APG,HLR-IOG,EBSS-SGSN,SGSN,MGW,WRAN-LTE,RNC,Wran-RBS, #
+# Wran-RXI,BSC-APG,BSC-IOG,STN-PICO,STN-SIU,MSC-APGOMS,SBG, #
+# MSC-BCOMS,IPWORKS,SAPC,MLPPP,EDGE-ROUTER,CPG,SNMP-NTP,    #
+# SNMP-Mgc,SNMP-LANSwitch,SNMP-IpRouter,SNMP-HpMrfp,MTAS,   #
+# SNMP-GGSN,SNMP-DNSServer,SNMP_DHCPServer,SNMP_Cs_CMS,RNC, #
+# SNMP_CS_DS,SNMP_CS_CDS,SNMP_ACME,SNMP_HOTSIP,MGW2.0FD,    #
+# CSCF,HSS,MRFC,SGSN-MME,IMS,IMS-M,TDRBS,TDRNC,SNMP_Cs_As,  #
+# TSS-TGC,EBA-EBSW,MSC-IOGOMS,SNMP_Firewall,                #                          
+#############################################################
+
+EPFG DATAGENDT ENABLE SGSN,CUDB,SGSN-MME,SBG,WRAN-LTE,IMS,MGW
+EPFGDATAGENMANAGER                                          #START EPFG TO LOAD PM DATA #FILE
+WAIT 60                                                     #DEPENDS ON NO OF TP 
+PRE_LOAD                                      
+WAIT 60                                                     #DEPENDS ON NO OF TP 
+WAIT_UNTIL_PROCESSES_DONE                                   #IF PROCESS ARE STILL IN QUEUE ( CHECK IN ADMINUI )
+LISTUPDATE TPINI ENABLE ALL
+SHOW_LOADINGS
+WAIT_UNTIL_PROCESSES_DONE                                   #IF PROCESS ARE STILL IN QUEUE ( CHECK IN ADMINUI )
+LISTUPDATE AGGINI ENABLE ALL
+SHOW_AGGREGATION
+DAYBH-INFO
+RANKBH-INFO
+READLOG

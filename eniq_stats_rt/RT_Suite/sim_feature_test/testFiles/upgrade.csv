@@ -1,0 +1,9 @@
+name,IPAddress,uniqueID,sftpPort,sftpUserName,pluginNames
+CCN_1,10.42.39.24,,22,root,CCN_Plugin|CCNDiam_Plugin|CCNOAM_Plugin|CCNPLAT_Plugin|CCNSS7_Plugin
+AIR_1,10.42.39.24,,22,root,AIR_Plugin
+VS_1,10.42.39.24,,22,root,VS_Plugin
+OCC_1,10.42.39.24,,22,root,OCCCounters_Plugin|OCCMeters_Plugin|OCCServerInfo_Plugin
+SDP_1,10.42.39.24,,22,root,SDP_Plugin
+IVR_1,10.42.39.24,,22,root,IVR_Plugin
+#MINSAT_1,10.42.39.24,,22,root,MINSATds_Plugin|MINSATsb_Plugin|MINSATsc_Plugin|MINSATss_Plugin
+#HWUTIL_1,10.42.39.24,,22,root,HWUtil_Plugin

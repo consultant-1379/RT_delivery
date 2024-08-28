@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
+    <fileHeader fileFormatVersion="3GPP_PM_32.435_XML_v7.2.0">
+        <fileSender/>
+        <measCollec beginTime="2014-01-29T08:15:01+01:00"/>
+    </fileHeader>
+    <measData>
+        <managedElement/>
+        <measInfo>
+            <job jobId="Sy-JOB"/>
+            <granPeriod endTime="2014-01-29T08:20:00+01:00" duration="PT300S"/>
+            <repPeriod duration="PT300S"/>
+            <measType p="1">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392--Java Formatter--SyPCRFCounter.Sy-SLR-Request-Attempts-10.44.175.69.actual</measType>
+            <measType p="2">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392--Java Formatter--SySDPCounter.Sy-SLA-Response-Attempts-10.44.241.104.actual</measType>
+            <measType p="3">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392--Java Formatter--SyPCRFCounter.Sy-SLR-Failed-Attempts-10.44.175.69.actual</measType>
+            <measType p="4">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392--Java Formatter--SyPCRFCounter.Sy-SLR-Request-Attempts-10.44.175.69.delta</measType>
+            <measType p="5">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392--Java Formatter--SySDPCounter.Sy-SLA-Response-Attempts-10.44.241.104.delta</measType>
+            <measType p="6">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392--Java Formatter--SyPCRFCounter.Sy-SLR-Failed-Attempts-10.44.175.69.delta</measType>
+            <measValue measObjLdn="">
+                <r p="1">6249</r>
+                <r p="2">5357</r>
+                <r p="3">892</r>
+                <r p="4">0</r>
+                <r p="5">0</r>
+                <r p="6">0</r>
+            </measValue>
+        </measInfo>
+    </measData>
+    <fileFooter>
+        <measCollec endTime="2014-01-29T08:20:00+01:00"/>
+    </fileFooter>
+</measCollecFile>

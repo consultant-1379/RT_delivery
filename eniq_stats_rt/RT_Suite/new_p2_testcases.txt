@@ -1,0 +1,24 @@
+#############################################################
+#                  INPUT FILE FOR RT-SCRIPT                 #
+#                   Updated on 19-08-2015                   #
+#############################################################
+
+
+
+COMPARE_BASELINE 
+SYSTEMSTATUS
+ENGINESTATUS
+SCHEDULERSTATUS
+LICSERVSTATUS
+VERIFY_DIRECTORIES
+VERIFY_ADMIN_SCRIPTS
+#####Discarded####DISKSPACE
+ACTIVE_PROCS
+SHOW_AGG_FUTURE_DATES
+PRE
+VERIFY_UNIVERSES
+#####Deprecated###VERIFY_BOREPORTS
+VERIFY_ALARMS
+SETEXECUTIONTIME
+####Deprecated###ASSUREMONITORING
+READLOG

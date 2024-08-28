@@ -1,0 +1,458 @@
+#!/bin/bash
+
+file_generation () {
+	cd /eniq/log/sw_log/tp_installer/
+	`find *tp_ins* -type f > file.txt`
+}
+
+upgrade_info () {
+	`cat $1|sed -n '/Order of tech packs to be installed:/,/Changing*/p'|sed '$d'|sed -n '/Order of tech packs to be installed:/!p' > ${file}.file`
+	cut_time=`echo $1|cut -c 1-10`
+	min=0
+	sec=0
+
+	
+	echo "********************************************************************"
+	echo "			Techpack Installer"
+	echo "********************************************************************"
+
+	#echo "$file $cut_time $cut_day"
+	for tp_file in `cat ${1}.file`
+	do
+		data=0
+		#echo "${tp_file}"
+		for tp_log in `find *${tp_file}.log -type f`
+		do
+			tp_time=`echo ${tp_log}|cut -c 1-10`
+			if [ "$tp_time" == "$cut_time" ]
+			then			
+				data=`cat $tp_log|grep -i "Total time:"|awk -F":" '{print $2}'`
+				printf "%-50s \t %-25s\n" "${tp_file}" "${data}" 
+			fi
+			
+		done
+		f=`echo ${data} | cut -d' ' -f1`
+		ff=`echo ${data} | cut -d' ' -f2`
+		fff=`echo ${data} | cut -d' ' -f3`
+		ffff=`echo ${data} | cut -d' ' -f4`
+		mino=0
+		seco=0
+		#echo "$f $ff $fff $ffff"
+		if [[ "$ff" == min* ]]
+		then
+			mino=${f}
+		elif [[ "$ffff" == min* ]]
+		then
+			mino=${fff}
+		fi
+				
+		if [[ "$ffff" == sec* ]] 
+		then
+			seco=${fff}
+		elif [[ "$ff" == sec* ]] 
+		then
+			seco=${f}
+		fi
+		sec=`expr $sec + $seco`
+		min=`expr $min + $mino`
+	done
+	sec_temp=`expr $sec / 60`
+	min=`expr $min + $sec_temp`
+	sec=`expr $sec % 60`
+	hour=`expr $min / 60`
+	min=`expr ${min} % 60`
+	echo "********************************************************************"
+	dat=`echo $1|cut -c -10`
+	echo "UPGRADE DATE: $dat"
+	echo "UPGRADE TOTAL TIME: $hour:$min:$sec"
+	echo "********************************************************************"
+	
+	sec=0
+	min=0
+	hour=0
+}
+
+
+tp_inst_info () {
+sec=0
+min=0
+
+tp_inst_dir=`ls /eniq/log/sw_log/tp_installer/`
+echo "********************************************************************"
+echo "			Techpack Installer"
+echo "********************************************************************"
+#this loop will read tp name and time of each log from /eniq/log/sw_log/tp_installer/ directory 
+    for iter_name in $tp_inst_dir
+	do
+		tp_name=`echo $iter_name | cut -c 21- | cut -d "." -f1`
+		tp_time=`cat /eniq/log/sw_log/tp_installer/$iter_name | grep -i "Total time:" | awk -F":" '{print $2}'`
+		if [[ "$iter_name" == *_tp_installer* ]]
+		then
+			echo -n ""
+		else if [[ "$iter_name" == *_activate_interf* ]]
+		then
+			echo -n ""
+		else
+			#echo -e "$tp_time \t \t \t $tp_name" 	
+			printf "%-50s \t %-25s\n" "$tp_name" "$tp_time" 
+			
+		fi fi
+	f=`echo ${tp_time} | cut -d' ' -f1`
+	ff=`echo ${tp_time} | cut -d' ' -f2`
+	fff=`echo ${tp_time} | cut -d' ' -f3`
+	ffff=`echo ${tp_time} | cut -d' ' -f4`
+#	echo "$f $ff $fff $ffff"
+	if [[ "$ff" == min* ]]
+	then
+		min=`expr ${min} + ${f}`
+	elif [[ "$ffff" == min* ]]
+	then
+		min=`expr ${min} + ${fff}`
+	elif [[ "$ffff" == sec* ]] 
+	then
+		sec=`expr ${sec} + ${fff}`
+	elif [[ "$ff" == sec* ]] 
+	then
+		sec=`expr ${sec} + ${f}`
+	fi
+	
+
+done
+	sec_temp=`expr $sec / 60`
+	min=`expr $min + $sec_temp`
+	sec=`expr $sec % 60`
+	hour=`expr $min / 60`
+	min=`expr ${min} % 60`
+	echo "********************************************************************"
+	echo "Total time: $hour:$min:$sec"
+	echo "********************************************************************"
+}
+
+pf_inst_info () { 
+
+sec=0
+min=0	
+pf_inst_dir=`ls /eniq/log/sw_log/platform_installer/`
+echo "********************************************************************"
+echo "			Platform Installer"
+echo "********************************************************************"
+#this loop will read tp name and time of each log from /eniq/log/sw_log/platform_installer/ directory 
+	for iter_name in $pf_inst_dir
+	do
+		tp_time=`cat /eniq/log/sw_log/platform_installer/$iter_name | grep -i "Total time:" | awk -F":" '{print $2}'`
+		tp_name=`echo $iter_name | cut -d"_" -f1`
+		if [ "${tp_time}" ]
+		then
+			#echo -e "$tp_time \t \t \t $tp_name"
+			printf "%-50s \t %-25s\n" "$tp_name" "$tp_time" 
+		else
+			echo -n ""
+	 	fi
+		f=`echo ${tp_time} | cut -d' ' -f1`
+		ff=`echo ${tp_time} | cut -d' ' -f2`
+		fff=`echo ${tp_time} | cut -d' ' -f3`
+		ffff=`echo ${tp_time} | cut -d' ' -f4`
+		#	echo "$f $ff $fff $ffff"
+		if [[ "$ff" == min* ]]
+		then
+			min=`expr ${min} + ${f}`
+		elif [[ "$ffff" == min* ]]
+		then
+			min=`expr ${min} + ${fff}`
+		elif [[ "$ffff" == sec* ]] 
+		then
+			sec=`expr ${sec} + ${fff}`
+		elif [[ "$ff" == sec* ]] 
+		then
+			sec=`expr ${sec} + ${f}`
+		fi
+	done
+	sec_temp=`expr $sec / 60`
+	min=`expr $min + $sec_temp`
+	sec=`expr $sec % 60`
+	hour=`expr $min / 60`
+	min=`expr ${min} % 60`
+	echo "********************************************************************"
+	echo "Total time: $hour:$min:$sec"
+	echo "********************************************************************"
+
+}
+
+particular_tp_upgrade () {
+option=0
+for file in `cat /eniq/log/sw_log/tp_installer/file.txt`
+do
+	option=`expr ${option} + 1`
+	echo "${option}. ${file}"
+done
+	echo ""
+	if [ "${option}" -gt 0 ]
+	then
+		echo "CHOOSE ONE FROM ABOVE LIST:" 
+		read choice 
+	else
+		echo "No techpack upgrade details available, please try again..."
+		sleep 2
+		cleanup
+	fi
+	
+check=0
+abc=0
+for file in `cat /eniq/log/sw_log/tp_installer/file.txt`
+do 
+	abc=`expr ${abc} + 1`
+	if [ "$choice" == "$abc" ]
+	then
+		#echo "${file}"
+		upgrade_info ${file}
+		check=1
+	fi	
+done	
+if [ "${check}" -eq 1 ]
+then 
+	retry
+
+else
+	echo "Your input is invalid."
+	sleep 2
+	cleanup
+fi
+	
+}
+
+
+home () { 
+clear
+echo "********************************************************************"
+echo "		WELCOME TO ENIQ-PLATFORM AUTOMATION"
+echo "********************************************************************"
+sleep 1
+echo "1. TO PRINT TECHPACK UPGRADE DETAILS"
+echo "2. TO PRINT ALL INSTALLED TECHPACK DETAILS"
+echo "3. TO PRINT PLATFORM UPGRADE DETAILS"
+echo "4. TO PRINT ALL INSTALLED PLATFORM MODULE DETAILS"
+echo "********************************************************************"
+user
+}
+
+user () {
+echo ""
+echo "PLEASE ENTER YOUR ACTION CHOICE TO PERFORM : "
+read option
+	if [ ${option} -eq 1 ]
+	then
+		particular_tp_upgrade
+		retry
+	elif [ ${option} -eq 2 ] 
+	then 
+		tp_inst_info
+		retry
+	elif [ ${option} -eq 3 ]
+	then 
+		first
+		retry
+	elif [ ${option} -eq 4 ]
+	then 
+		pf_inst_info
+		retry
+	else
+		echo ""
+		echo "YOUR INPUT IS NOT VALID"
+		sleep 3
+		clear
+		cleanup
+	fi
+	
+	
+}
+
+retry () {
+echo ""
+echo "DO YOU WANT TO PERFORM ANOTHER OPERATION ? (y/n) : "
+read option
+	if [ "${option}" == "y" ] || [ "${option}" == "Y" ]; then
+		home
+	elif [ "${option}" == "n" ] || [ "${option}" == "N" ]; then
+		cleanup
+	else
+		echo "Please try again..."
+	#	retry
+		cleanup
+	fi
+}
+
+
+first () {
+	 `ls -ltra /eniq/log/sw_log/platform_installer/ | cut -c42- > /eniq/log/sw_log/platform_installer/out.file`
+	`cat /eniq/admin/version/eniq_history | grep INST_DATE* > /eniq/log/sw_log/platform_installer/version.txt`
+	`tr -s ' ' '&' </eniq/log/sw_log/platform_installer/version.txt >/eniq/log/sw_log/platform_installer/ver.txt`
+	`echo -n "" > /eniq/log/sw_log/platform_installer/pf.txt`
+	
+	for info in `cat /eniq/log/sw_log/platform_installer/ver.txt | cut -d"&" -f2`
+	do
+		#echo "${info}"
+		comp_day=`echo ${info} | cut -c 10-11`
+		mon=`echo ${info} | cut -c 6-8`
+		if [[ "$comp_day" == 0* ]]; then
+			day=`echo "$comp_day" | cut -c2-`
+		else 
+			day="$comp_day"
+		fi
+		#echo "$mon $day"
+		for fmon in `cat /eniq/log/sw_log/platform_installer/out.file | cut -d" " -f1 | uniq -d`
+		do 
+			if [ "${fmon}" == "$mon" ]; then
+				for fday in `cat /eniq/log/sw_log/platform_installer/out.file | cut -d" " -f2 | uniq -d`
+				do
+					if [ "${fday}" == "$day" ]; then
+						echo "$day,$mon" >> /eniq/log/sw_log/platform_installer/pf.txt
+					fi
+					
+				done
+				for ffday in `cat /eniq/log/sw_log/platform_installer/out.file | cut -d" " -f3 | uniq -d`
+				do
+					if [ "${ffday}" == "$day" ]; then
+						echo "$day,$mon" >> /eniq/log/sw_log/platform_installer/pf.txt
+					fi
+				done
+			fi
+		done
+	done
+	second
+	}
+	
+second () {
+	
+option=0
+for file in `cat /eniq/log/sw_log/platform_installer/pf.txt`
+do
+	option=`expr ${option} + 1`
+	echo "${option}. ${file}"
+done
+	echo ""
+	if [ "${option}" -gt 0 ]
+	then
+		echo "CHOOSE ONE FROM ABOVE LIST:" 
+		read choice 
+	else
+		echo "No platform upgrade details available, please try again..."
+		sleep 2
+		cleanup
+	fi
+abc=0
+check=0
+for file in `cat /eniq/log/sw_log/platform_installer/pf.txt`
+do 
+	abc=`expr ${abc} + 1`
+	if [ "$choice" == "$abc" ]
+	then
+		#echo "${file}"
+		third ${file}
+		check=1
+	fi
+done	
+if [ "${check}" -eq 1 ]
+then 
+	retry
+else
+	echo "Your input is invalid."
+	sleep 2
+	cleanup
+fi
+
+ }
+ 
+ third () {
+	echo ""
+	echo "********************************************************************"
+	echo "			Platform Installer"
+	echo "********************************************************************"
+ sleep 1
+ `tr -s ' ' '-' </eniq/log/sw_log/platform_installer/out.file >/eniq/log/sw_log/platform_installer/outputfile`
+ fday=`echo "$1" | cut -d"," -f1`
+ fmon=`echo "$1" | cut -d"," -f2`
+ #echo "$fday $fmon"
+ min=0
+ sec=0
+ for check in `cat /eniq/log/sw_log/platform_installer/outputfile`
+	do 
+		#echo "${check}"
+		mon=`echo ${check} | cut -d"-" -f1`
+		day=`echo ${check} | cut -d"-" -f2`
+		if [ "$mon" == "$fmon" ] && [ "$day" == "$fday" ]; then
+			tp=`echo ${check} | cut -d"-" -f4`
+			
+			for tp in ${tp}
+			do
+				tp_time=`cat /eniq/log/sw_log/platform_installer/$tp | grep -i "Total time:" | awk -F":" '{print $2}'`
+				tp_name=`echo $tp | cut -d"_" -f1`
+				if [ "${tp_time}" ]
+				then
+					printf "%-50s \t %-25s\n" "$tp_name" "$tp_time" 
+				else
+					echo -n ""
+				fi
+				f=`echo ${tp_time} | cut -d' ' -f1`
+				ff=`echo ${tp_time} | cut -d' ' -f2`
+				fff=`echo ${tp_time} | cut -d' ' -f3`
+				ffff=`echo ${tp_time} | cut -d' ' -f4`
+				#	echo "$f $ff $fff $ffff"
+				if [[ "$ff" == min* ]]
+				then
+					min=`expr ${min} + ${f}`
+				elif [[ "$ffff" == min* ]]
+				then
+					min=`expr ${min} + ${fff}`
+				elif [[ "$ffff" == sec* ]] 
+				then
+					sec=`expr ${sec} + ${fff}`
+				elif [[ "$ff" == sec* ]] 
+				then
+					sec=`expr ${sec} + ${f}`
+				fi
+			done
+		fi
+	done
+	sec_temp=`expr $sec / 60`
+	min=`expr $min + $sec_temp`
+	sec=`expr $sec % 60`
+	hour=`expr $min / 60`
+	min=`expr ${min} % 60`
+	echo "********************************************************************"
+	echo "Total time: $hour:$min:$sec"
+	echo "********************************************************************"
+}
+
+
+cleanup () {
+	rm -rf /eniq/log/sw_log/platform_installer/out.file >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/platform_installer/outputfile >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/platform_installer/pf.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/platform_installer/ver.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/platform_installer/version.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/tp_installer/pf.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/tp_installer/file.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/tp_installer/*file >> /dev/null 2>&1
+	clear
+	exit 0
+}
+
+pre_cleanup () {
+	rm -rf /eniq/log/sw_log/platform_installer/out.file >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/platform_installer/outputfile >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/platform_installer/pf.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/platform_installer/ver.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/platform_installer/version.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/tp_installer/pf.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/tp_installer/file.txt >> /dev/null 2>&1
+	rm -rf /eniq/log/sw_log/tp_installer/*file >> /dev/null 2>&1
+}
+
+# Main of our script
+
+pre_cleanup
+file_generation
+home
+
+
+exit 

@@ -1,0 +1,59 @@
+#!/bin/bash
+pre () {
+	cd 
+	`/eniq/sw/installer/get_active_interfaces | awk -F" " '{print $1}' | sort | uniq > file1.txt`
+	sprint=`cat /eniq/admin/version/eniq_status | grep ENIQ_STATUS* | cut -c 38- | cut -c -6`
+
+`cat /net/159.107.177.67/export/SW_LOCATION/ENIQ_STATS/ENIQ_STATS/${sprint}/eniq_base_sw/eniq_techpacks/feature_techpacks | cut -c 13- | sort | uniq > file2.txt`
+
+	for f1 in `cat file2.txt`
+	do
+	twist=0
+		for f2 in `cat file1.txt`
+		do
+			if [ "$f1" == "$f2" ]
+			then
+				twist=1
+			fi
+		done
+		if [ "$twist" == 0 ]
+			then			
+			`echo $f1 >> file3.txt`
+		fi
+	done
+
+echo " "
+echo "Getting the list of Interfaces that should be active from /net/159.107.177.67/export/SW_LOCATION/ENIQ_STATS/ENIQ_STATS/${sprint}/eniq_base_sw/eniq_techpacks/feature_techpacks"
+echo " "
+if [ -f file3.txt ]
+then
+echo "********************************************************************"
+echo "                  Not Active Interface"
+echo "********************************************************************"
+	`cat file3.txt | sort | uniq > file4.txt`
+	cnt=0
+	for f123 in `cat file4.txt`
+	do
+		cnt=`expr ${cnt} + 1`
+		echo "$cnt. $f123"
+	done
+else
+	echo "All interfaces are active."
+fi
+
+}
+
+cleanup () {
+	rm -rf file1.txt >> /dev/null 2>&1
+	rm -rf file2.txt >> /dev/null 2>&1
+	rm -rf file3.txt >> /dev/null 2>&1
+	rm -rf file4.txt >> /dev/null 2>&1
+}
+
+# Main of our script
+
+cleanup
+pre
+cleanup
+
+exit 

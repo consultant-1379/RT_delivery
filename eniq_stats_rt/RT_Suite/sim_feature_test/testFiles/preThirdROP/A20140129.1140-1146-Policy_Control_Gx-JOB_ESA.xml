@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
+    <fileHeader fileFormatVersion="3GPP_PM_32.435_XML_v7.2.0">
+        <fileSender/>
+        <measCollec beginTime="2014-01-29T11:40:00+01:00"/>
+    </fileHeader>
+    <measData>
+        <managedElement/>
+        <measInfo>
+            <job jobId="Policy_Control_Gx-JOB"/>
+            <granPeriod endTime="2014-01-29T11:45:00+01:00" duration="PT300S"/>
+            <repPeriod duration="PT300S"/>
+            <measType p="1">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCR-Update-Failed-Attempts-10.44.175.85.actual</measType>
+            <measType p="2">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCR-Terminate-Failed-Attempts-10.44.175.85.actual</measType>
+            <measType p="3">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCR-Initial-Failed-Attempts-10.44.175.85.actual</measType>
+            <measType p="4">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCA-Terminate-Response-Attempts-10.44.175.85.actual</measType>
+            <measType p="5">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCA-Update-Response-Attempts-10.44.175.85.delta</measType>
+            <measType p="6">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCR-Initial-Failed-Attempts-10.44.175.85.delta</measType>
+            <measType p="7">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCR-Terminate-Failed-Attempts-10.44.175.85.delta</measType>
+            <measType p="8">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCA-Initial-Response-Attempts-10.44.175.85.delta</measType>
+            <measType p="9">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--GxValidation.Policy-Gx-CCR-Terminate-Request-Attempts-10.44.175.85.delta</measType>
+            <measType p="10">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--GxValidation.Policy-Gx-CCR-Initial-Request-Attempts-10.44.175.85.delta</measType>
+            <measType p="11">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCR-Update-Failed-Attempts-10.44.175.85.delta</measType>
+            <measType p="12">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCA-Initial-Response-Attempts-10.44.175.85.actual</measType>
+            <measType p="13">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--GxValidation.Policy-Gx-CCR-Update-Request-Attempts-10.44.175.85.actual</measType>
+            <measType p="14">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--GxValidation.Policy-Gx-CCR-Terminate-Request-Attempts-10.44.175.85.actual</measType>
+            <measType p="15">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCA-Terminate-Response-Attempts-10.44.175.85.delta</measType>
+            <measType p="16">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--CCA Counter.Policy-Gx-CCA-Update-Response-Attempts-10.44.175.85.actual</measType>
+            <measType p="17">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--GxValidation.Policy-Gx-CCR-Initial-Request-Attempts-10.44.175.85.actual</measType>
+            <measType p="18">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268--Java Formatter--GxValidation.Policy-Gx-CCR-Update-Request-Attempts-10.44.175.85.delta</measType>
+            <measValue measObjLdn="">
+                <r p="1">1</r>
+                <r p="2">1</r>
+                <r p="3">1</r>
+                <r p="4">2</r>
+                <r p="5">2</r>
+                <r p="6">1</r>
+                <r p="7">1</r>
+                <r p="8">2</r>
+                <r p="9">2</r>
+                <r p="10">2</r>
+                <r p="11">1</r>
+                <r p="12">2</r>
+                <r p="13">2</r>
+                <r p="14">2</r>
+                <r p="15">2</r>
+                <r p="16">2</r>
+                <r p="17">2</r>
+                <r p="18">2</r>
+            </measValue>
+        </measInfo>
+    </measData>
+    <fileFooter>
+        <measCollec endTime="2014-01-29T11:45:00+01:00"/>
+    </fileFooter>
+</measCollecFile>

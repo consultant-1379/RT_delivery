@@ -1,0 +1,952 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="MeasDataCollection.xsl" ?>
+<!DOCTYPE mdc SYSTEM "MeasDataCollection.dtd">
+<mdc xmlns:HTML="http://www.w3.org/TR/REC-xml">
+<mfh>
+<ffv>1</ffv>
+<sn>DC=ericsson.se,g3SubNetwork=Sweden,g3ManagedElement=jambala</sn>
+<st></st>
+<vn>ERICSSON</vn>
+<cbt>20150929110148.0+0000</cbt>
+</mfh>
+<md>
+<neid>
+<neun></neun>
+<nedn>DC=ericsson.se,g3SubNetwork=Sweden,g3ManagedElement=jambala1</nedn>
+</neid>
+
+<mi>
+<mts>20150929111648.0+0000</mts>
+<gp>900</gp>
+<mt>CcnPerfCounter</mt>
+
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-Request-Analysis-Failed, Source = _SYSTEM</moid>
+<r>1039</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Start-Successful, Source = _SYSTEM</moid>
+<r>1321</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Refund-Failed, Source = _SYSTEM</moid>
+<r>945</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-AccountFinderError-Allowed, Source = _SYSTEM</moid>
+<r>1251</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-AccountFinderError-Not-Allowed, Source = _SYSTEM</moid>
+<r>1486</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Stop-Successful, Source = _SYSTEM</moid>
+<r>972</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Update-Successful, Source = _SYSTEM</moid>
+<r>1988</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Refund-Successful, Source = _SYSTEM</moid>
+<r>960</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Direct-Debit-Successful, Source = _SYSTEM</moid>
+<r>1300</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Direct-Debit-Failed, Source = _SYSTEM</moid>
+<r>1539</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Start-Failed, Source = _SYSTEM</moid>
+<r>1495</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Stop-Failed, Source = _SYSTEM</moid>
+<r>1490</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Dcc-SCAPv2-123-Update-Failed, Source = _SYSTEM</moid>
+<r>1680</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-FirstInterrogation-Successful, Source = _SYSTEM</moid>
+<r>1743</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-FirstInterrogation-Congestion, Source = _SYSTEM</moid>
+<r>1127</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-FirstInterrogation-NoContactWithSDP, Source = _SYSTEM</moid>
+<r>1646</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-FirstInterrogation-InternalError, Source = _SYSTEM</moid>
+<r>1460</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-IntermediateInterrogation-Successful, Source = _SYSTEM</moid>
+<r>1858</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-IntermediateInterrogation-NoContactWithSDP, Source = _SYSTEM</moid>
+<r>1635</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-IntermediateInterrogation-Congestion, Source = _SYSTEM</moid>
+<r>1129</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-IntermediateInterrogation-InternalError, Source = _SYSTEM</moid>
+<r>1918</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-FinalReport-Successful, Source = _SYSTEM</moid>
+<r>1479</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-FinalReport-NoContactWithSDP, Source = _SYSTEM</moid>
+<r>1391</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-FinalReport-Congestion, Source = _SYSTEM</moid>
+<r>1258</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayContent-FinalReport-InternalError, Source = _SYSTEM</moid>
+<r>1262</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FirstInterrogation-Successful, Source = _SYSTEM</moid>
+<r>1458</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FirstInterrogation-Congestion-Rejected, Source = _SYSTEM</moid>
+<r>1591</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FirstInterrogation-Congestion-Allowed, Source = _SYSTEM</moid>
+<r>1127</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FirstInterrogation-NoContactWithSDP-Rejected, Source = _SYSTEM</moid>
+<r>1177</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FirstInterrogation-NoContactWithSDP-Allowed, Source = _SYSTEM</moid>
+<r>1579</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FirstInterrogation-InternalError-Rejected, Source = _SYSTEM</moid>
+<r>1332</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FirstInterrogation-ApnError-Rejected, Source = _SYSTEM</moid>
+<r>1504</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-IntermediateInterrogation-Successful, Source = _SYSTEM</moid>
+<r>1201</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-IntermediateInterrogation-NoContactWithSDP-Rejected, Source = _SYSTEM</moid>
+<r>1255</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-IntermediateInterrogation-NoContactWithSDP-Allowed, Source = _SYSTEM</moid>
+<r>1650</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-IntermediateInterrogation-InternalError-Rejected, Source = _SYSTEM</moid>
+<r>1508</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-IntermediateInterrogation-Congestion-Allowed, Source = _SYSTEM</moid>
+<r>1262</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-IntermediateInterrogation-Congestion-Rejected, Source = _SYSTEM</moid>
+<r>1211</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-IntermediateInterrogation-ApnError-Rejected, Source = _SYSTEM</moid>
+<r>1543</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FinalReport-Successful, Source = _SYSTEM</moid>
+<r>1186</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FinalReport-NoContactWithSDP, Source = _SYSTEM</moid>
+<r>1537</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FinalReport-InternalError, Source = _SYSTEM</moid>
+<r>2000</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FinalReport-Congestion, Source = _SYSTEM</moid>
+<r>1503</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelayPdp-FinalReport-ApnError, Source = _SYSTEM</moid>
+<r>1343</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FirstInterrogation-Successful, Source = _SYSTEM</moid>
+<r>1138</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FirstInterrogation-Congestion-Rejected, Source = _SYSTEM</moid>
+<r>1709</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FirstInterrogation-Congestion-Allowed, Source = _SYSTEM</moid>
+<r>1874</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FirstInterrogation-NoContactWithSDP-Rejected, Source = _SYSTEM</moid>
+<r>1068</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FirstInterrogation-NoContactWithSDP-Allowed, Source = _SYSTEM</moid>
+<r>1084</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FirstInterrogation-InternalError-Rejected, Source = _SYSTEM</moid>
+<r>1275</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FinalReport-Successful, Source = _SYSTEM</moid>
+<r>1593</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FinalReport-NoContactWithSDP, Source = _SYSTEM</moid>
+<r>1157</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FinalReport-InternalError, Source = _SYSTEM</moid>
+<r>1449</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RelaySms-FinalReport-Congestion, Source = _SYSTEM</moid>
+<r>1181</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FirstInterrogation-Successful, Source = _SYSTEM</moid>
+<r>1108</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FirstInterrogation-Congestion, Source = _SYSTEM</moid>
+<r>1409</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FirstInterrogation-NoContactWithSDP-Allowed, Source = _SYSTEM</moid>
+<r>1171</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FirstInterrogation-NoContactWithSDP-NotAllowed, Source = _SYSTEM</moid>
+<r>1737</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FirstInterrogation-InternalError, Source = _SYSTEM</moid>
+<r>1563</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-IntermediateInterrogation-Successful, Source = _SYSTEM</moid>
+<r>1913</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-IntermediateInterrogation-Congestion, Source = _SYSTEM</moid>
+<r>1785</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-IntermediateInterrogation-NoContactWithSDP-Allowed, Source = _SYSTEM</moid>
+<r>1360</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-IntermediateInterrogation-NoContactWithSDP-NotAllowed, Source = _SYSTEM</moid>
+<r>964</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-IntermediateInterrogation-InternalError, Source = _SYSTEM</moid>
+<r>1315</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FinalReport-Successful, Source = _SYSTEM</moid>
+<r>921</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FinalReport-Congestion, Source = _SYSTEM</moid>
+<r>979</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FinalReport-NoContactWithSDP, Source = _SYSTEM</moid>
+<r>1750</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FinalReport-InternalError, Source = _SYSTEM</moid>
+<r>1138</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RTC-Received-Total-Requests, Source = _SYSTEM</moid>
+<r>2895</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=DiamAccess-ConnReqReceived, Source = _SYSTEM</moid>
+<r>1427</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=DiamAccess-AppReqReceived-xyz2-SCAP, Source = _SYSTEM</moid>
+<r>1714</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=INAP-Received-Total-Requests, Source = _SYSTEM</moid>
+<r>1065</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=INAP-Sent-Total-Requests, Source = _SYSTEM</moid>
+<r>2061</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Number-Portability-Total-Requests, Source = _SYSTEM</moid>
+<r>1475</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=MAPv3-Total-Dialogue-Attempts, Source = _SYSTEM</moid>
+<r>939</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv1-Received-Total-Requests, Source = _SYSTEM</moid>
+<r>1972</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv1-Received-Component-Rejects, Source = _SYSTEM</moid>
+<r>1102</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv2-Sent-Component-Rejects, Source = _SYSTEM</moid>
+<r>1795</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Ccn-Subscriber-Not-Found-Response, Source = _SYSTEM</moid>
+<r>1179</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv3-Received-Component-Rejects, Source = _SYSTEM</moid>
+<r>922</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv3-Sent-Component-Rejects, Source = _SYSTEM</moid>
+<r>1500</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RTC-Sent-Total-Answers, Source = _SYSTEM</moid>
+<r>1051</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RTC-Sent-Component-Failures, Source = _SYSTEM</moid>
+<r>172</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=RTC-Sent-Error-Indications, Source = _SYSTEM</moid>
+<r>104</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=DiamAccess-AppReqRejected-Due-To-Overload, Source = _SYSTEM</moid>
+<r>98</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=DiamAccess-ConnReqRejected-Due-To-Overload, Source = _SYSTEM</moid>
+<r>67</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=INAP-Received-Component-Rejects, Source = _SYSTEM</moid>
+<r>47</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=INAP-Received-Error-Indications, Source = _SYSTEM</moid>
+<r>13</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=INAP-Sent-Component-Rejects, Source = _SYSTEM</moid>
+<r>10</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=INAP-Sent-Error-Indications, Source = _SYSTEM</moid>
+<r>49</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Number-Portability-Failed-Requests, Source = _SYSTEM</moid>
+<r>133</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=MAPv3-Failed-Dialogues, Source = _SYSTEM</moid>
+<r>37</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAP-Received-Total-Invalid-Requests, Source = _SYSTEM</moid>
+<r>118</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv1-Received-Error-Indications, Source = _SYSTEM</moid>
+<r>126</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv1-Sent-Total-Requests, Source = _SYSTEM</moid>
+<r>35</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv1-Received-Returned-Components, Source = _SYSTEM</moid>
+<r>108</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv2-Received-Component-Rejects, Source = _SYSTEM</moid>
+<r>63</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAP2-Received-Error-Indications, Source = _SYSTEM</moid>
+<r>51</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv2-Sent-Total-Requests, Source = _SYSTEM</moid>
+<r>152</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv2-Sent-Error-Indications, Source = _SYSTEM</moid>
+<r>50</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv2-Received-Returned-Components, Source = _SYSTEM</moid>
+<r>56</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv3-Received-Error-Indications, Source = _SYSTEM</moid>
+<r>42</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv3-Sent-Total-Requests, Source = _SYSTEM</moid>
+<r>12</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv3-Sent-Error-Indications, Source = _SYSTEM</moid>
+<r>38</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=SDP-Lookup-Failed-Subscriber-Not-Found, Source =  _SYSTEM</moid>
+<r>132</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Data-Discarded, Source = _SYSTEM</moid>
+<r>98</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Data-Sent-To-Primary-Disc, Source = _SYSTEM</moid>
+<r>1906</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Data-Sent-To-Primary-Disk, Source = _SYSTEM</moid>
+<r>1163</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Data-Sent-To-Secondary-Disc, Source = _SYSTEM</moid>
+<r>232</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Data-Stored-On-Disc-0, Source = _SYSTEM</moid>
+<r>364</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Data-Stored-On-Disc-1, Source = _SYSTEM</moid>
+<r>19</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Data-Stored-On-Disk-0, Source = _SYSTEM</moid>
+<r>229</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Encoded-Failed, Source = _SYSTEM</moid>
+<r>502</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Encoded-Successful, Source = _SYSTEM</moid>
+<r>293</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Files-Generated-On-Disc-0, Source = _SYSTEM</moid>
+<r>274</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Files-Generated-On-Disc-1, Source = _SYSTEM</moid>
+<r>88</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Files-Generated-On-Disk-0, Source = _SYSTEM</moid>
+<r>42</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Files-Sent-To-FTP-Destination, Source = _SYSTEM</moid>
+<r>178</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Files-Sent-To-FTP-Destination-Failed, Source = _SYSTEM</moid>
+<r>30</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Files-Generated-On-Disk-1, Source = _SYSTEM</moid>
+<r>5</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CdrOutput-Data-Stored-On-Disk-1, Source = _SYSTEM</moid>
+<r>84</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FirstInterrogation-Successful, Source = _SYSTEM</moid>
+<r>96</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-BalanceCheck-Successful, Source = _SYSTEM</moid>
+<r>1</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FirstInterrogation-Congestion, Source = _SYSTEM</moid>
+<r>132</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-BalanceCheck-Congestion, Source = _SYSTEM</moid>
+<r>94</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FirstInterrogation-NoContactWithSDP-Allowed, Source = _SYSTEM</moid>
+<r>36</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-BalanceCheck-NoContactWithSDP-Allowed, Source = _SYSTEM</moid>
+<r>2</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FirstInterrogation-NoContactWithSDP-Not-Allowed, Source = _SYSTEM</moid>
+<r>60</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-BalanceCheck-NoContactWithSDP-Not-Allowed, Source = _SYSTEM</moid>
+<r>81</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FirstInterrogation-InternalError, Source = _SYSTEM</moid>
+<r>87</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-BalanceCheck-InternalError, Source = _SYSTEM</moid>
+<r>178</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FinalReport-Successful, Source = _SYSTEM</moid>
+<r>99</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-DirectDebit-Successful, Source = _SYSTEM</moid>
+<r>193</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FinalReport-NoContactWithSDP, Source = _SYSTEM</moid>
+<r>51</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-DirectDebit-NoContactWithSDP, Source = _SYSTEM</moid>
+<r>147</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FinalReport-InternalError, Source = _SYSTEM</moid>
+<r>72</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-DirectDebit-InternalError, Source = _SYSTEM</moid>
+<r>114</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-FinalReport-Congestion, Source = _SYSTEM</moid>
+<r>136</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-DirectDebit-Congestion, Source = _SYSTEM</moid>
+<r>122</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-Originating-Sms, Source = _SYSTEM</moid>
+<r>46</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Messaging-Charging-Terminating-Sms, Source = _SYSTEM</moid>
+<r>4</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv2-Received-Total-Requests, Source = _SYSTEM</moid>
+<r>17</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=CAPv3-Received-Total-Requests, Source = _SYSTEM</moid>
+<r>33</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-Originating-Call, Source = _SYSTEM</moid>
+<r>30</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-Forwarding-Call, Source = _SYSTEM</moid>
+<r>153</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-Terminating-Call, Source = _SYSTEM</moid>
+<r>93</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FLCD-Local-Call, Source = _SYSTEM</moid>
+<r>57</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-FLCD-Non-Local-Call, Source = _SYSTEM</moid>
+<r>234</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-BACS-GrantedTime-Expires-Long-Call, Source = _SYSTEM</moid>
+<r>111</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-Pgs-Triggered-Prepaid-Calls, Source = _SYSTEM</moid>
+<r>188</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-Pgs-Triggered-Postpaid-Calls, Source = _SYSTEM</moid>
+<r>131</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-charging-PCR-Attempts, Source = _SYSTEM</moid>
+<r>102</r>
+<sf>FALSE</sf>
+
+</mv>
+<mv>
+<moid>CcnCounters=Voice-Charging-PCR-Continue-Call-Requests, Source = _SYSTEM</moid>
+<r>59</r>
+<sf>FALSE</sf>
+
+</mv>
+</mi>
+</md>
+
+<mff><ts>20150929111648.0+0000</ts></mff>
+
+</mdc>
+
+
+
+
+
+

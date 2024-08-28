@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
+    <fileHeader fileFormatVersion="3GPP_PM_32.435_XML_v7.2.0">
+        <fileSender/>
+        <measCollec beginTime="2014-01-29T08:15:01+01:00"/>
+    </fileHeader>
+    <measData>
+        <managedElement/>
+        <measInfo>
+            <job jobId="COMPONENT-JOB"/>
+            <granPeriod endTime="2014-01-29T08:20:00+01:00" duration="PT300S"/>
+            <repPeriod duration="PT300S"/>
+            <measType p="1">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392----tlCeases.actual</measType>
+            <measType p="2">t5220x1091--SERVER@t5220x1091--4_19089-CXC_1730371----tlCeases.delta</measType>
+            <measType p="3">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843----tlRaises.actual</measType>
+            <measType p="4">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----levelChanges.actual</measType>
+            <measType p="5">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392----levelChanges.actual</measType>
+            <measType p="6">t5220x1091--SERVER@t5220x1091--4_19089-CXC_1730371----tlRaises.delta</measType>
+            <measType p="7">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268----tlRaises.delta</measType>
+            <measType p="8">t5220x1091--SERVER@t5220x1091--1_19089-CXC_1730371----tlRaises.delta</measType>
+            <measType p="9">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----tlRaises.delta</measType>
+            <measType p="10">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268----levelChanges.delta</measType>
+            <measType p="11">t5220x1116--SERVER@t5220x1116--4_19089-CXC_1730371_OCCB----levelChanges.actual</measType>
+            <measType p="12">t5220x1091--SERVER@t5220x1091--1_19089-CXC_1730371----tlRaises.actual</measType>
+            <measType p="13">t5220x1091--SERVER@t5220x1091--4_19089-CXC_1730371----tlRaises.actual</measType>
+            <measType p="14">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843----levelChanges.delta</measType>
+            <measType p="15">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831----levelChanges.actual</measType>
+            <measType p="16">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392----tlCeases.delta</measType>
+            <measType p="17">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----tlCeases.actual</measType>
+            <measType p="18">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268----levelChanges.actual</measType>
+            <measType p="19">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843----tlCeases.actual</measType>
+            <measType p="20">t5220x1116--SERVER@t5220x1116--4_19089-CXC_1730371_OCCB----tlCeases.actual</measType>
+            <measType p="21">t5220x1116--SERVER@t5220x1116--4_19089-CXC_1730371_OCCB----levelChanges.delta</measType>
+            <measType p="22">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831----tlRaises.actual</measType>
+            <measType p="23">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268----tlCeases.actual</measType>
+            <measType p="24">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843----tlCeases.delta</measType>
+            <measType p="25">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268----tlRaises.actual</measType>
+            <measType p="26">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831----levelChanges.delta</measType>
+            <measType p="27">t5220x1091--SERVER@t5220x1091--1_19089-CXC_1730371----tlCeases.delta</measType>
+            <measType p="28">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----levelChanges.delta</measType>
+            <measType p="29">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392----levelChanges.delta</measType>
+            <measType p="30">t5220x1116--SERVER@t5220x1116--4_19089-CXC_1730371_OCCB----tlRaises.actual</measType>
+            <measType p="31">t5220x1091--SERVER@t5220x1091--4_19089-CXC_1730371----levelChanges.delta</measType>
+            <measType p="32">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392----tlRaises.delta</measType>
+            <measType p="33">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----tlRaises.actual</measType>
+            <measType p="34">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843----tlRaises.delta</measType>
+            <measType p="35">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1734268----tlCeases.delta</measType>
+            <measType p="36">t5220x1091--SERVER@t5220x1091--1_19089-CXC_1730371----levelChanges.delta</measType>
+            <measType p="37">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831----tlRaises.delta</measType>
+            <measType p="38">t5220x1091--SERVER@t5220x1091--1_19089-CXC_1730371----levelChanges.actual</measType>
+            <measType p="39">t5220x1091--SERVER@t5220x1091--4_19089-CXC_1730371----tlCeases.actual</measType>
+            <measType p="40">t5220x1091--SERVER@t5220x1091--1_19089-CXC_1730371----tlCeases.actual</measType>
+            <measType p="41">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831----tlCeases.actual</measType>
+            <measType p="42">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736392----tlRaises.actual</measType>
+            <measType p="43">t5220x1116--SERVER@t5220x1116--4_19089-CXC_1730371_OCCB----tlCeases.delta</measType>
+            <measType p="44">t5220x1116--SERVER@t5220x1116--4_19089-CXC_1730371_OCCB----tlRaises.delta</measType>
+            <measType p="45">t5220x1091--SERVER@t5220x1091--4_19089-CXC_1730371----levelChanges.actual</measType>
+            <measType p="46">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----tlCeases.delta</measType>
+            <measType p="47">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831----tlCeases.delta</measType>
+            <measType p="48">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843----levelChanges.actual</measType>
+            <measValue measObjLdn="">
+                <r p="1">0</r>
+                <r p="2">0</r>
+                <r p="3">0</r>
+                <r p="4">0</r>
+                <r p="5">0</r>
+                <r p="6">0</r>
+                <r p="7">0</r>
+                <r p="8">0</r>
+                <r p="9">0</r>
+                <r p="10">0</r>
+                <r p="11">0</r>
+                <r p="12">0</r>
+                <r p="13">0</r>
+                <r p="14">0</r>
+                <r p="15">0</r>
+                <r p="16">0</r>
+                <r p="17">0</r>
+                <r p="18">0</r>
+                <r p="19">0</r>
+                <r p="20">0</r>
+                <r p="21">0</r>
+                <r p="22">0</r>
+                <r p="23">0</r>
+                <r p="24">0</r>
+                <r p="25">0</r>
+                <r p="26">0</r>
+                <r p="27">0</r>
+                <r p="28">0</r>
+                <r p="29">0</r>
+                <r p="30">0</r>
+                <r p="31">0</r>
+                <r p="32">0</r>
+                <r p="33">0</r>
+                <r p="34">0</r>
+                <r p="35">0</r>
+                <r p="36">0</r>
+                <r p="37">0</r>
+                <r p="38">0</r>
+                <r p="39">0</r>
+                <r p="40">0</r>
+                <r p="41">0</r>
+                <r p="42">0</r>
+                <r p="43">0</r>
+                <r p="44">0</r>
+                <r p="45">0</r>
+                <r p="46">0</r>
+                <r p="47">0</r>
+                <r p="48">0</r>
+            </measValue>
+        </measInfo>
+    </measData>
+    <fileFooter>
+        <measCollec endTime="2014-01-29T08:20:00+01:00"/>
+    </fileFooter>
+</measCollecFile>

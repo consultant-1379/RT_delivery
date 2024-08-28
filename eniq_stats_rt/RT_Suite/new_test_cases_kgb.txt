@@ -1,0 +1,119 @@
+#############################################################
+#                  INPUT FILE FOR RT-SCRIPT                 #
+#                   Updated on 10-08-2015                   #
+#############################################################
+
+#DBSpace_FileSystemUsage
+#SERVERCLEANUP
+#DBSpace_FileSystemUsage
+COMPARE_BASELINE 
+
+##################### ADMIN UI TEST CASES ###################                                  
+
+#RESIZEDB                                                   #USE THIS IF REQUIRED
+#HELP
+#VERIFY_EXECUTABLES
+#SCHEDULERCLI
+#ENGINECLI
+#WEBSERVERCLI
+#LICMGRCLI
+#LICSERVCLI
+#DWHDBCLI
+#RUNCMDLINE
+#SYSTEMSTATUS
+#ENGINESTATUS
+#SCHEDULERSTATUS
+#LICSERVSTATUS
+#VERIFY_DIRECTORIES
+#VERIFY_ADMIN_SCRIPTS
+#####Discarded####DISKSPACE
+#ACTIVE_PROCS
+#SHOW_AGG_FUTURE_DATES
+#PREBASE
+#VERIFY_UNIVERSES
+#####Deprecated###VERIFY_BOREPORTS
+#VERIFY_ALARMS
+#SETEXECUTIONTIME
+#ASSUREMONITORING
+#DBSpace_FileSystemUsage
+#Create_Snapshots #use for blade
+#Create_Rack_Snapshots #use for rack
+############ LOAD TOPOLOGY TEST CASES USING EPFG ############
+
+
+########################################################################################
+# VERIFY TOPOLOGY TABLES THIS TESTCASE HELPS TO GENARATE THE TOPOLOGY FILES FROM EPFG  #
+# FOLLOWED BY TOPOLOGY DATA VERIFICATION PASS THE FOLLOWING PARAMETERS TO THIS TESTCASE#                                            #  									   #
+# VERIFY TOPOLOGY TABLES ALL OR  < tp1 tp2 ....>                                      #
+# EG : VERIFY TOPOLOGY TABLES  CUDB HSS IMS CN                                       #
+#      VERIFY TOPOLOGY TABLES  ALL                                                   # 
+########################################################################################
+
+VERIFY TOPOLOGY TABLES  ALL 
+
+#EPFG DATAGEN DISABLE ALL
+#EPFGUPDATE_TOPOLOGY
+
+#############################################################
+#               LOAD PM-FILES TEST CASES                    #
+#   IF THE FOLLOWING DATE AND TIME IS NOT EDITED PROPERLY   #
+#   SCRIPT WILL GENERATE DATA FOR YESTERDAY DATE.           #
+#############################################################
+
+
+
+#############################################################
+#  SELECT THE REQUIRED TP NAME FROM THIS LIST TO LOAD PM    #
+#                FOR SELECTED TP ONLY                       #
+#############################################################
+# EBA-EBSG,SASN,SASN-SARA,GGSN,CUDB,MSC-APG,MSC-IOG,MSC-BC, #
+# HLR-APG,HLR-IOG,EBSS-SGSN,SGSN,MGW,WRAN-LTE,RNC,Wran-RBS, #
+# Wran-RXI,BSC-APG,BSC-IOG,STN-PICO,STN-SIU,MSC-APGOMS,SBG, #
+# MSC-BCOMS,IPWORKS,SAPC,MLPPP,EDGE-ROUTER,CPG,SNMP-NTP,    #
+# SNMP-Mgc,SNMP-LANSwitch,SNMP-IpRouter,SNMP-HpMrfp,MTAS,   #
+# SNMP-GGSN,SNMP-DNSServer,SNMP_DHCPServer,SNMP_Cs_CMS,RNC, #
+# SNMP_CS_DS,SNMP_CS_CDS,SNMP_ACME,SNMP_HOTSIP,MGW2.0FD,    #
+# CSCF,HSS,MRFC,SGSN-MME,IMS,IMS-M,TDRBS,TDRNC,SNMP_Cs_As,  #
+# EBA-EBSW,MSC-IOGOMS,SNMP_Firewall,BulkCM,                 #                          
+#############################################################
+
+
+##########################################################################################
+# EPFGLOADPM THIS TESTCASE HELPS TO GENARATE THE PM FILES FROM EPFG FOLLOWED BY TOPOLOGY #                   
+# DATA VERIFICATION PASS THE FOLLOWING PARAMETERS TO THIS TEST CASE 					 #				   
+# EPFG_NUMBER_OF_NODES   EPFG START TIME EPFG_END _TIME ALL or <tp1 tp2…tpn>             #
+# EG : EPFGLOADPM 10 08-05-2015-10:00 08-05-2015-10:45 CUDB HSS IMS CN                   #                    
+#      EPFGLOADPM 10 08-05-2015-10:00 08-05-2015-10:45 ALL                               #                    
+##########################################################################################
+
+EPFGLOADPM 5 12-04-2016-10:00 13-04-2016-11:00 ALL               #START EPFG TO LOAD PM DATA #FILE
+
+
+###WAIT 25
+#DBSpace_FileSystemUsage                                                     #DEPENDS ON NO OF TP 
+PRE_LOAD                                      
+WAIT 10                                                    #DEPENDS ON NO OF TP 
+#WAIT_UNTIL_PROCESSES_DONE                                   #IF PROCESS ARE STILL IN QUEUE ( CHECK IN ADMINUI )
+WAIT_UNTIL_LOADERS_DONE 
+#DBSpace_FileSystemUsage
+#####LISTUPDATE TPINI ENABLE ALL
+SHOW_LOADINGS
+#SOEM&TWAMP
+#DBSpace_FileSystemUsage
+#WAIT_UNTIL_PROCESSES_DONE                                   #IF PROCESS ARE STILL IN QUEUE ( CHECK IN ADMINUI )
+####LISTUPDATE AGGINI ENABLE ALL
+#WAIT_UNTIL_AGGREGATORS_DONE		#Uncomment when Aggregator TC is correctly implemented
+#SHOW_AGGREGATION
+#DAYBH-INFO
+#RANKBH-INFO
+READLOG
+Counter
+#DataMismatch												#Invalid Test Case, to be replaced by a better TC
+#Datavalidation
+#DBSpace_FileSystemUsage
+#ADMINUI_DWHCONFIG
+#ADMINUI_TYPECONFIG
+#ADMINUI_DATA_ROW_SUMMARY
+#ADMINUI_DATA_ROW_INFO
+#BUSY_HOUR_COUNT
+

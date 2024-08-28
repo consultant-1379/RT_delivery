@@ -1,0 +1,345 @@
+#!/bin/bash
+# ********************************************************************************
+# Ericsson Radio Systems AB                                     SCRIPT
+# ********************************************************************************
+#
+#
+# (c) Ericsson Radio Systems AB 2013 - All rights reserved.
+#
+# The copyright to the computer program(s) herein is the property
+# of Ericsson Radio Systems AB, Sweden. The programs may be used
+# and/or copied only with the written permission from Ericsson Radio
+# Systems AB or in accordance with the terms and conditions stipulated
+# in the agreement/contract under which the program(s) have been
+# supplied.
+#
+# ********************************************************************************
+# Name    : GenerateTPVersionInfo.bsh
+# Date    : 06/12/2013
+# Revision: A.1
+# Purpose : To Generate Techpack's R-state and Build number for a 
+#			ENIQ Stats Shipment
+#
+# Usage   : GenerateTPVersionInfo.bsh -s <shipment> -t <techpack>
+#                               [-l <logfile>] 
+#
+# ********************************************************************************
+#
+#   Command Section
+#
+# ********************************************************************************
+
+AWK=/usr/bin/awk
+BASENAME=/usr/bin/basename
+CAT=/usr/bin/cat
+CP=/usr/bin/cp
+DATE=/usr/bin/date
+DIRNAME=/usr/bin/dirname
+ECHO=/usr/bin/echo
+EGREP=/usr/bin/egrep
+ENV=/usr/bin/env
+EXPR=/usr/bin/expr
+FIND=/usr/bin/find
+GEGREP=/usr/sfw/bin/gegrep
+GREP=/usr/bin/grep
+HEAD=/usr/bin/head
+LS=/usr/bin/ls
+MKDIR=/usr/bin/mkdir
+MORE=/usr/bin/more
+MV=/usr/bin/mv
+NAWK=/usr/bin/nawk
+PWD=/usr/bin/pwd
+RM=/usr/bin/rm
+SED=/usr/bin/sed
+SORT=/usr/bin/sort
+TEE=/usr/bin/tee
+
+DELIVERY_VOBS=/vobs/dm_eniq/AT_delivery/container
+
+
+
+
+##cleartool lshistory /vobs/dm_eniq/AT_delivery/container/DC_E_RBS.tpi | $GREP "14.1.9" | $AWK '{print $5}' | xargs cleartool describe | $EGREP "buildNum|RState"|$NAWK -F "= " '{print $2}'
+
+##cleartool lshistory /vobs/dm_eniq/AT_delivery/container/DC_E_RBS.tpi | $GREP "14.1.9" | $AWK '{print $5}' | xargs cleartool describe | $EGREP "buildNum|RState" | $NAWK -F\" '{print $2}'
+
+##cleartool lshistory /vobs/dm_eniq/AT_delivery/container/DC_E_RBS.tpi | $HEAD -4 | $AWK  '{print $5}' | xargs cleartool describe
+##cleartool lshistory /vobs/dm_eniq/AT_delivery/container/DC_E_RBS.tpi
+
+
+
+### Function: abort_script ###
+#
+#   This will is called if the script is aborted thru an error
+#   signal sent by the kernel such as CTRL-C or if a serious
+#   error is encountered during runtime
+#
+# Arguments:
+#       $1 - Error message from part of program (Not always used)
+# Return Values:
+#       none
+abort_script()
+{
+if [ "$1" ]; then
+    _err_msg_=$1
+else
+    _err_msg_="`$DATE +%d.%m.%y_%H:%M:%S` - ERROR : Script aborted.......\n"
+fi
+
+if [ "${LOGFILE}" ]; then
+    $ECHO "\n`$DATE +%d.%m.%y_%H:%M:%S` - ERROR : $_err_msg_\n" | $TEE -a ${LOGFILE}
+else
+    $ECHO "\n`$DATE +%d.%m.%y_%H:%M:%S` - ERROR : $_err_msg_\n"
+fi
+
+exit 1
+}
+
+### Function: generateRstate ###
+#
+# Determine R-state and build no. 
+# of a techpack for delivering shipment
+#
+# Arguments:
+#   none
+# Return Values:
+#   none
+
+generateRstate()
+{
+	local _shipment_=$1
+	local _techpack_=$2
+	local _rstate_ 
+	local _version_
+	local _last_rstate_
+	local _last_version_
+	local _last_shipment_
+	local _track_=`$ECHO ${_shipment_}| $AWK -F"." '{print $1"."$2}'`
+	local _highest_rstate_in_alltrack_
+	local _highest_version_in_alltrack_
+	##check if techpack is DC or BO
+	#####################################################################
+	if [ `$ECHO ${_techpack_}|$AWK -F"_" '{print $1}'` = "DC" ]; then
+		_ext_=".tpi"
+	fi
+	if [ `$ECHO ${_techpack_}|$AWK -F"_" '{print $1}'` = "DIM" ]; then
+		_ext_=".tpi"
+	fi
+	if [ `$ECHO ${_techpack_}|$AWK -F"_" '{print $1}'` = "BO" ]; then
+		_ext_=".zip"
+	fi
+	if [ `$ECHO ${_techpack_}|$AWK -F"_" '{print $1}'` = "DWH" ]; then
+		_ext_=".tpi"
+	fi
+	if [ `$ECHO ${_techpack_}|$AWK -F"_" '{print $1}'` = "INTF" ]; then
+		_ext_=".tpi"
+	fi	
+	# find the highest r-state and version of techpack delivered till date
+	######################################################################
+	
+	_delivery_check_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} | $GREP version|$AWK '{print $5}' | xargs cleartool describe -aattr BaseLine | $NAWK -F\" '{print $2}' | $GREP "${_shipment_}"`
+	_last_rstate_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} | $GREP version|$GREP "${_shipment_}" | $AWK '{print $5}' | xargs cleartool describe | $EGREP "RState" | $NAWK -F\" '{print $2}' | $SORT -rn|$HEAD -1`
+	_last_version_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} |$GREP version| $GREP "${_shipment_}" | $AWK '{print $5}' | xargs cleartool describe | $EGREP "buildNum" | $NAWK -F\" '{print $2}' | $SORT -rn|$HEAD -1`
+	
+	if [ "${PLM}" ]; then
+		echo "generating version info for PLM ${_shipment_}"
+		_highest_rstate_in_alltrack_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} |$GREP version| $AWK '{print $5}' | xargs cleartool describe | $EGREP "RState" | $AWK -F\" '{print $2}'| $SED 's/[R]//g' | $SORT -rn|$HEAD -1`
+		_highest_version_in_alltrack_tmp_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} |$GREP version| $AWK '{print $5}' | xargs cleartool describe | $EGREP "buildNum" | $AWK -F\" '{print $2}' | $SED 's/_b//g' | $SORT -rn -k1,1|$HEAD -1`
+		_highest_version_in_alltrack_="_b"${_highest_version_in_alltrack_tmp_}
+		#echo "${_highest_rstate_in_alltrack_} ${_highest_version_in_alltrack_}"
+		if [ `echo ${_highest_version_in_alltrack_tmp_}|$SED 's/_b//g'` -lt 700 ]; then
+			_highest_version_in_alltrack_="_b700"
+		fi
+	else
+		echo "generating version info for Design ${_shipment_}"
+		_highest_rstate_in_alltrack_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} |$GREP version| $AWK '{print $5}' | xargs cleartool describe | $EGREP "RState" | $AWK -F\" '{print $2}'| $SED 's/[R]//g' | $SORT -rn|$HEAD -1`
+		_highest_version_in_alltrack_tmp_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} |$GREP version| $AWK '{print $5}' | xargs cleartool describe | $EGREP "buildNum" | $AWK -F\" '{print $2}' | $SED 's/_b//g'| $SORT -rn -k1,1`
+		
+		for _version_ in ${_highest_version_in_alltrack_tmp_}; do
+			if [ "${_version_}" -lt 700 ]; then
+				_highest_version_in_alltrack_tmp_=${_version_}
+				break
+				#echo "${_highest_rstate_in_alltrack_} ${_highest_version_in_alltrack_}"
+			fi
+	    done	
+	    _highest_version_in_alltrack_="_b"${_highest_version_in_alltrack_tmp_}
+	fi
+	########################################################################
+	
+	
+	if [ -z "${_delivery_check_}" ]; then
+		$ECHO "${_techpack_} is not yet delivered in ${_shipment_}. checking in shipement of last delivery."
+				
+		##check highest version of TP delivered in same track
+		_highest_rstate_in_track_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} | $GREP version|$GREP ${_track_} | $AWK '{print $5}' | xargs cleartool describe | $EGREP "RState" | $NAWK -F\" '{print $2}' | $SORT -rn | $HEAD -1`
+		_highest_version_in_track_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} |$GREP version| $GREP ${_track_} | $AWK '{print $5}' | xargs cleartool describe | $EGREP "buildNum" | $NAWK -F\" '{print $2}' | $SORT -rn | $HEAD -1`
+		_check_last_highest_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} |$GREP version|$GREP ${_track_} | $AWK '{print $5}' | xargs cleartool describe |$GREP BaseLine |$GREP ${_track_}`
+
+		#if last delivery in track
+		if [ -z "${_check_last_highest_}" ]; then
+            _rstate_series_=`$ECHO ${_highest_rstate_in_alltrack_}|$SED 's/[A-Z]//g'`
+            let _rstate_=${_rstate_series_}+1
+            $ECHO "generating version information for ${_shipment_}"
+            _rstate_="R"${_rstate_}"A"
+            let _version_=`echo ${_highest_version_in_alltrack_}|$AWK -F"_b" '{print $2}'`+1
+            _version_="_b"${_version_}
+            $ECHO "Recommanded version for ${_techpack_} for ${_shipment_} is ${_rstate_}${_version_}"
+        else
+		
+			########check higher and lower rstate################################
+			 _ec_track_=`$ECHO ${_shipment_}| $AWK -F"." '{print $1$2$3}'`
+			 _ec_ship_last=`$ECHO ${_shipment_}| $AWK -F"." '{print $3}'`
+			 _flag_=0
+			 for (( i=1;i < 3;i++ ))
+			 do
+			 let _step_up_=${_ec_ship_last}+i
+			 _ec_ship_next_=${_track_}"."${_step_up_}
+			 _next_rstate_ship_track_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} | $GREP version|$AWK '{print $5}' | xargs cleartool describe -aattr BaseLine | $NAWK -F\" '{print $2}' | $GREP "${_ec_ship_next_}"`
+			 if [ "${_next_rstate_ship_track_}" ]; then
+			 	_flag_=1
+			 	let _step_down_=${_ec_ship_last}-1
+			 	for (( i=${_step_down_};i > 1;--i ))
+			 	do
+			 		_ec_ship_last_=${_track_}"."$i
+			 		_next_rstate_ship_track_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} | $GREP version|$AWK '{print $5}' | xargs cleartool describe -aattr BaseLine | $NAWK -F\" '{print $2}' | $GREP "${_ec_ship_last_}"`
+			 		_next_rstate_ship_track_tmp_=`cleartool lshistory ${DELIVERY_VOBS}/${_techpack_}${_ext_} | $GREP version|$GREP "${_ec_ship_last_}" | $AWK '{print $5}' | xargs cleartool describe | $EGREP "RState" | $NAWK -F\" '{print $2}' | $SORT -rn|$HEAD -1`
+			 		if [ "${_next_rstate_ship_track_}" ]; then
+			 			_highest_rstate_in_track_=${_next_rstate_ship_track_tmp_}
+			 			break
+			 		fi
+			 	done
+			 	break
+			 fi
+			 done
+			 #####################################################################
+			_new_version_=`$ECHO ${_highest_version_in_track_}|$NAWK -F"_b" '{print $2}'`
+			let _highest_version_in_alltrack_tmp_=${_highest_version_in_alltrack_tmp_}+1
+			
+			let _diff_=${_highest_version_in_alltrack_tmp_}-${_new_version_}
+			if [ ${_diff_} -gt 0 ]; then
+			
+				_rstate_series_=`$ECHO ${_highest_rstate_in_track_}|$SED 's/[A-Z]//g'` 
+				_rstate_alpha_=`$ECHO ${_highest_rstate_in_track_}|$SED 's/[R0-9]//g'` 
+				$ECHO "generating version information for ${_shipment_}"
+				if [ ${_flag_} -gt 0 ]; then
+				_rstate_=${_highest_rstate_in_track_}
+				else
+				_rstate_="R"${_rstate_series_}`$ECHO ${_rstate_alpha_} | perl -le "print chr(ord(<>) + 1)"`
+				fi
+				_version_="_b"${_highest_version_in_alltrack_tmp_}
+			
+				$ECHO "Recommanded version for ${_techpack_} for ${_shipment_} is ${_rstate_}${_version_}"
+			else
+				_err_msg_= " "_b"${_highest_version_in_alltrack_temp_} has already been delivered. Please check the clear case history"
+				#abort_script "$_err_msg_"
+			fi 
+		fi
+	else
+	    if [ "{PLM}" ]; then
+	    _new_version_=`$ECHO ${_highest_version_in_alltrack_}|$NAWK -F"_b" '{print $2}'`
+	    else
+		_new_version_=`$ECHO ${_last_version_}|$NAWK -F"_b" '{print $2}'`
+		fi
+		let _new_version_+=1
+		
+		let _diff_=${_new_version_}-${_highest_version_in_alltrack_tmp_}
+		if [ ${_diff_} -gt 0 ]; then
+			_version_="_b"${_new_version_}
+			$ECHO "Recommanded version for ${_techpack_} for ${_shipment_} is ${_last_rstate_}${_version_}"
+		else
+			_version_="_b"${_new_version_}
+			$ECHO "Recommanded version for ${_techpack_} for ${_shipment_} is ${_last_rstate_}${_version_}"
+		fi 
+	fi		
+}
+
+
+### Function: get_absolute_path ###
+#
+# Determine absolute path to software
+#
+# Arguments:
+#   none
+# Return Values:
+#   none
+get_absolute_path()
+{
+_dir_=`$DIRNAME $0`
+SCRIPTHOME=`cd $_dir_ 2>/dev/null && pwd || $ECHO $_dir_`
+}
+
+### Function: usage_msg ###
+#
+# Usage
+#
+# Arguments:
+#   none
+# Return Values:
+#   none
+usage_msg()
+{
+$ECHO "
+Usage: `/usr/bin/basename $0` -l <logfile> -s <shipment> -t <techpack> -p (optional)
+
+options:
+
+-l : Logfile to be used.
+
+-s : Delivery Shipment i.e 14.1.9 
+
+-t : Name of techpack i.e DC_E_RBS
+
+-p : what is that PLM based R-STATE
+"
+}
+
+# ********************************************************************************
+#
+#   Main body of program
+#
+# ********************************************************************************
+#
+TIMESTAMP=`$DATE +%d.%m.%y_%H:%M:%S`
+
+# Determine absolute path to software
+get_absolute_path
+
+while getopts ":l:s:t:p" arg; do
+	case $arg in
+		l)  LOGFILE="$OPTARG"
+			;;
+		s)  SHIPMENT="$OPTARG"
+			;;
+		t)  TECHPACK_NAME="$OPTARG"
+			;;
+		p)  PLM="YES"
+			;;
+		\?)	usage_msg
+			exit 1
+			;;
+	esac
+done
+shift `expr $OPTIND - 1`
+
+USER=`who|$AWK '{print $1}'`
+
+if [ ! "$LOGFILE" ]; then
+	LOGFILE=/home/${USER}/GenerateTPVersionInfo.log
+fi
+
+if [ -z "$SHIPMENT" ]; then
+    _err_msg_="SHIPMENT is not defined"
+    abort_script "$_err_msg_"
+fi
+
+if [ -z "${TECHPACK_NAME}" ]; then
+    _err_msg_="TECHPACK_NAME is not defined"
+    abort_script "$_err_msg_"
+fi
+
+echo ${SHIPMENT} ${TECHPACK_NAME}
+
+#provide R-state and build no. for delivering techpack
+generateRstate ${SHIPMENT} ${TECHPACK_NAME}
+
+exit 0

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
+    <fileHeader fileFormatVersion="3GPP_PM_32.435_XML_v7.2.0">
+        <fileSender/>
+        <measCollec beginTime="2014-01-29T08:15:01+01:00"/>
+    </fileHeader>
+    <measData>
+        <managedElement/>
+        <measInfo>
+            <job jobId="Policy_Control_ESy-JOB"/>
+            <granPeriod endTime="2014-01-29T08:20:00+01:00" duration="PT300S"/>
+            <repPeriod duration="PT300S"/>
+            <measType p="1">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.STR.Failed.actual</measType>
+            <measType p="2">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.STR.actual</measType>
+            <measType p="3">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SLR.actual</measType>
+            <measType p="4">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SNR.actual</measType>
+            <measType p="5">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SNA.actual</measType>
+            <measType p="6">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.STR.delta</measType>
+            <measType p="7">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SLR.Success.actual</measType>
+            <measType p="8">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SNR.Success.actual</measType>
+            <measType p="9">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SNA.delta</measType>
+            <measType p="10">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SLR.Failed.delta</measType>
+            <measType p="11">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SLR.delta</measType>
+            <measType p="12">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SLA.actual</measType>
+            <measType p="13">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SNR.Success.delta</measType>
+            <measType p="14">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SLR.Failed.actual</measType>
+            <measType p="15">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SLR.Success.delta</measType>
+            <measType p="16">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.STR.Success.delta</measType>
+            <measType p="17">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.STR.Success.actual</measType>
+            <measType p="18">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.STA.actual</measType>
+            <measType p="19">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.STR.Failed.delta</measType>
+            <measType p="20">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SNR.Failed.delta</measType>
+            <measType p="21">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SLA.delta</measType>
+            <measType p="22">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.STA.delta</measType>
+            <measType p="23">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SNR.delta</measType>
+            <measType p="24">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1733831--Java Formatter--ESyCounter.SNR.Failed.actual</measType>
+            <measValue measObjLdn="">
+                <r p="1">0</r>
+                <r p="2">101</r>
+                <r p="3">101</r>
+                <r p="4">0</r>
+                <r p="5">0</r>
+                <r p="6">0</r>
+                <r p="7">101</r>
+                <r p="8">0</r>
+                <r p="9">0</r>
+                <r p="10">0</r>
+                <r p="11">0</r>
+                <r p="12">101</r>
+                <r p="13">0</r>
+                <r p="14">0</r>
+                <r p="15">0</r>
+                <r p="16">0</r>
+                <r p="17">101</r>
+                <r p="18">101</r>
+                <r p="19">0</r>
+                <r p="20">0</r>
+                <r p="21">0</r>
+                <r p="22">0</r>
+                <r p="23">0</r>
+                <r p="24">0</r>
+            </measValue>
+        </measInfo>
+    </measData>
+    <fileFooter>
+        <measCollec endTime="2014-01-29T08:20:00+01:00"/>
+    </fileFooter>
+</measCollecFile>

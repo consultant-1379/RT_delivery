@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
+    <fileHeader fileFormatVersion="3GPP_PM_32.435_XML_v7.2.0">
+        <fileSender/>
+        <measCollec beginTime="2014-01-29T08:15:01+01:00"/>
+    </fileHeader>
+    <measData>
+        <managedElement/>
+        <measInfo>
+            <job jobId="ACTIVITY-JOB"/>
+            <granPeriod endTime="2014-01-29T08:20:00+01:00" duration="PT300S"/>
+            <repPeriod duration="PT300S"/>
+            <measType p="1">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Total_No_Of_Parent_Entities.min</measType>
+            <measType p="2">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Total_No_Of_Entities.min</measType>
+            <measType p="3">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Create.actual</measType>
+            <measType p="4">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Total_No_Of_Parent_Entities.min</measType>
+            <measType p="5">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----files.created.delta</measType>
+            <measType p="6">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Total_No_Of_Entities.actual</measType>
+            <measType p="7">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Total_No_Of_Entities.max</measType>
+            <measType p="8">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Expired_Removed.actual</measType>
+            <measType p="9">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Total_No_Of_Parent_Entities.actual</measType>
+            <measType p="10">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Create.actual</measType>
+            <measType p="11">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Create.delta</measType>
+            <measType p="12">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Remove.delta</measType>
+            <measType p="13">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----files.diskdistribution.success.actual</measType>
+            <measType p="14">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----files.created.actual</measType>
+            <measType p="15">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----CDR.failed.delta</measType>
+            <measType p="16">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Update.actual</measType>
+            <measType p="17">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Create.delta</measType>
+            <measType p="18">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Total_No_Of_Parent_Entities.max</measType>
+            <measType p="19">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Expired_Removed.delta</measType>
+            <measType p="20">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Create.delta</measType>
+            <measType p="21">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Total_No_Of_Entities.min</measType>
+            <measType p="22">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Total_No_Of_Parent_Entities.actual</measType>
+            <measType p="23">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Total_No_Of_Parent_Entities.actual</measType>
+            <measType p="24">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Total_No_Of_Entities.actual</measType>
+            <measType p="25">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Remove.delta</measType>
+            <measType p="26">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Total_No_Of_Entities.actual</measType>
+            <measType p="27">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Total_No_Of_Entities.max</measType>
+            <measType p="28">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Remove.actual</measType>
+            <measType p="29">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Total_No_Of_Entities.min</measType>
+            <measType p="30">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Update.actual</measType>
+            <measType p="31">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Remove.actual</measType>
+            <measType p="32">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Update.delta</measType>
+            <measType p="33">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Update.delta</measType>
+            <measType p="34">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Total_No_Of_Parent_Entities.max</measType>
+            <measType p="35">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Update.actual</measType>
+            <measType p="36">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Remove.delta</measType>
+            <measType p="37">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----files.diskdistribution.success.delta</measType>
+            <measType p="38">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Remove.actual</measType>
+            <measType p="39">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Expired_Removed.actual</measType>
+            <measType p="40">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371----CDR.failed.actual</measType>
+            <measType p="41">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Expired_Removed.delta</measType>
+            <measType p="42">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Expired_Removed.delta</measType>
+            <measType p="43">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--MainSessionContainer.Create.actual</measType>
+            <measType p="44">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Total_No_Of_Entities.max</measType>
+            <measType p="45">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Update.delta</measType>
+            <measType p="46">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1730843--Container--ServiceSessionContainer.Expired_Removed.actual</measType>
+            <measType p="47">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Total_No_Of_Parent_Entities.max</measType>
+            <measType p="48">t5220x1091--SERVER@t5220x1091--5_19089-CXC_1730371--Container--RecordIdNumberContainer.Total_No_Of_Parent_Entities.min</measType>
+            <measValue measObjLdn="">
+                <r p="1">0</r>
+                <r p="2">2</r>
+                <r p="3">4</r>
+                <r p="4">0</r>
+                <r p="5">0</r>
+                <r p="6">0</r>
+                <r p="7">0</r>
+                <r p="8">0</r>
+                <r p="9">0</r>
+                <r p="10">2</r>
+                <r p="11">0</r>
+                <r p="12">0</r>
+                <r p="13">2</r>
+                <r p="14">2</r>
+                <r p="15">0</r>
+                <r p="16">20</r>
+                <r p="17">0</r>
+                <r p="18">0</r>
+                <r p="19">0</r>
+                <r p="20">0</r>
+                <r p="21">0</r>
+                <r p="22">0</r>
+                <r p="23">0</r>
+                <r p="24">0</r>
+                <r p="25">0</r>
+                <r p="26">2</r>
+                <r p="27">0</r>
+                <r p="28">0</r>
+                <r p="29">0</r>
+                <r p="30">44</r>
+                <r p="31">4</r>
+                <r p="32">0</r>
+                <r p="33">0</r>
+                <r p="34">0</r>
+                <r p="35">68</r>
+                <r p="36">0</r>
+                <r p="37">0</r>
+                <r p="38">4</r>
+                <r p="39">0</r>
+                <r p="40">0</r>
+                <r p="41">0</r>
+                <r p="42">0</r>
+                <r p="43">4</r>
+                <r p="44">2</r>
+                <r p="45">0</r>
+                <r p="46">0</r>
+                <r p="47">0</r>
+                <r p="48">0</r>
+            </measValue>
+        </measInfo>
+    </measData>
+    <fileFooter>
+        <measCollec endTime="2014-01-29T08:20:00+01:00"/>
+    </fileFooter>
+</measCollecFile>

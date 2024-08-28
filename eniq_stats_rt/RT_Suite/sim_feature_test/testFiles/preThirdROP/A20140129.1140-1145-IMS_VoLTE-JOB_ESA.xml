@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
+    <fileHeader fileFormatVersion="3GPP_PM_32.435_XML_v7.2.0">
+        <fileSender/>
+        <measCollec beginTime="2014-01-29T11:40:00+01:00"/>
+    </fileHeader>
+    <measData>
+        <managedElement/>
+        <measInfo>
+            <job jobId="IMS_VoLTE-JOB"/>
+            <granPeriod endTime="2014-01-29T11:45:00+01:00" duration="PT300S"/>
+            <repPeriod duration="PT300S"/>
+            <measType p="1">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Successful-Forwarding-Calls.delta</measType>
+            <measType p="2">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Service-Not-Allowed-null.actual</measType>
+            <measType p="3">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Successful-Originating-Calls.actual</measType>
+            <measType p="4">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Subscriber-Not-Found.delta</measType>
+            <measType p="5">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Successful-Forwarding-Calls.actual</measType>
+            <measType p="6">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Originating-Calls.delta</measType>
+            <measType p="7">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Forwarding-Calls.actual</measType>
+            <measType p="8">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Terminating-Calls.delta</measType>
+            <measType p="9">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Successful-Calls.actual</measType>
+            <measType p="10">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Total-Calls.actual</measType>
+            <measType p="11">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Service-Not-Allowed-null.delta</measType>
+            <measType p="12">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Successful-Terminating-Calls.actual</measType>
+            <measType p="13">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Originating-Calls.actual</measType>
+            <measType p="14">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Rating-Internal-Error.delta</measType>
+            <measType p="15">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Successful-Terminating-Calls.delta</measType>
+            <measType p="16">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Successful-Originating-Calls.delta</measType>
+            <measType p="17">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Rating-Internal-Error.actual</measType>
+            <measType p="18">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Terminating-Calls.actual</measType>
+            <measType p="19">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Forwarding-Calls.delta</measType>
+            <measType p="20">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Subscriber-Not-Found.actual</measType>
+            <measType p="21">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Total-Calls.delta</measType>
+            <measType p="22">t5220x1091--SERVER@t5220x1091--2_19089-CXC_1736183--Java Formatter--VoLTEStatisticalCounters.IMS-Successful-Calls.delta</measType>
+            <measValue measObjLdn="">
+                <r p="1">0</r>
+                <r p="2">0</r>
+                <r p="3">2</r>
+                <r p="4">0</r>
+                <r p="5">0</r>
+                <r p="6">3</r>
+                <r p="7">0</r>
+                <r p="8">0</r>
+                <r p="9">2</r>
+                <r p="10">3</r>
+                <r p="11">0</r>
+                <r p="12">0</r>
+                <r p="13">3</r>
+                <r p="14">0</r>
+                <r p="15">0</r>
+                <r p="16">2</r>
+                <r p="17">0</r>
+                <r p="18">0</r>
+                <r p="19">0</r>
+                <r p="20">0</r>
+                <r p="21">3</r>
+                <r p="22">2</r>
+            </measValue>
+        </measInfo>
+    </measData>
+    <fileFooter>
+        <measCollec endTime="2014-01-29T11:45:00+01:00"/>
+    </fileFooter>
+</measCollecFile>

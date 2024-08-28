@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="MeasDataCollection.xsl" ?>
+<!DOCTYPE mdc SYSTEM "MeasDataCollection.dtd">
+<mdc xmlns:HTML="http://www.w3.org/TR/REC-xml">
+<mfh>
+<ffv>1</ffv>
+<sn>DC=ericsson.se,g3SubNetwork=Sweden,g3ManagedElement=jambala1</sn>
+<st></st>
+<vn>ERICSSON</vn>
+<cbt>20150929164430.0+0000</cbt>
+</mfh>
+<md>
+<neid>
+<neun></neun>
+<nedn>DC=ericsson.se,g3SubNetwork=Sweden,g3ManagedElement=jambala1</nedn>
+</neid>
+
+<mi>
+<mts>20150929165930.0+0000</mts>
+<gp>900</gp>
+<mt>CpuLoad</mt>
+<mt>MaxCpuLoad</mt>
+<mt>MemUsed</mt>
+<mt>MemFree</mt>
+<mt>MemUsage</mt>
+<mt>MaxMemUsage</mt>
+<mt>ProcessorUptime</mt>
+<mt>ClusterUptime</mt>
+<mt>DiskUsage</mt>
+
+<mv>
+<moid>PlatformMeasures=DEFAULT, Source = _SYSTEM</moid>
+<r>5</r>
+<r>34</r>
+<r>181</r>
+<r>65245</r>
+<r>35</r>
+<r>69315</r>
+<r>672353</r>
+<r>672353</r>
+<r>41</r>
+<sf>FALSE</sf>
+
+</mv>
+
+</mi>
+
+</md>
+
+<mff><ts>20150929165930.0+0000</ts></mff>
+
+</mdc>
+
+
+
+
+
+

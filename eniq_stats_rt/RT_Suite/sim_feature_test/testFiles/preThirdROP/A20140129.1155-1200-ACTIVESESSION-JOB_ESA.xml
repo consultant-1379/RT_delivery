@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<measCollecFile xmlns="http://www.3gpp.org/ftp/specs/archive/32_series/32.435#measCollec">
+    <fileHeader fileFormatVersion="3GPP_PM_32.435_XML_v7.2.0">
+        <fileSender/>
+        <measCollec beginTime="2014-01-29T11:55:01+01:00"/>
+    </fileHeader>
+    <measData>
+        <managedElement/>
+        <measInfo>
+            <job jobId="ACTIVESESSION-JOB"/>
+            <granPeriod endTime="2014-01-29T12:00:00+01:00" duration="PT300S"/>
+            <repPeriod duration="PT300S"/>
+            <measType p="1">ActiveSession.Gy-Concurrent-Session-Aggregate.max</measType>
+            <measType p="2">ActiveSession.Gy-Concurrent-Session-Aggregate.actual</measType>
+            <measType p="3">ActiveSession.Gy-Concurrent-Session-10.44.175.85.min</measType>
+            <measType p="4">ActiveSession.Gy-Concurrent-Session-Aggregate.min</measType>
+            <measType p="5">ActiveSession.Gy-Concurrent-Session-10.44.175.85.max</measType>
+            <measType p="6">ActiveSession.Gy-Concurrent-Session-10.44.175.85.actual</measType>
+            <measValue measObjLdn="">
+                <r p="1">1298</r>
+                <r p="2">1298</r>
+                <r p="3">1298</r>
+                <r p="4">1298</r>
+                <r p="5">1298</r>
+                <r p="6">1298</r>
+            </measValue>
+        </measInfo>
+    </measData>
+    <fileFooter>
+        <measCollec endTime="2014-01-29T12:00:00+01:00"/>
+    </fileFooter>
+</measCollecFile>

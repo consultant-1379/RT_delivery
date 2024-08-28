@@ -1,0 +1,9 @@
+name,IPAddress,uniqueID,sftpPort,sftpUserName,pluginNames
+CCN_1,127.0.0.1,,22,dcuser,CCN_Plugin|CCNDiam_Plugin|CCNPLAT_Plugin
+AIR_1,127.0.0.1,,22,dcuser,AIR_Plugin
+VS_1,127.0.0.1,,22,dcuser,VS_Plugin
+OCC_1,127.0.0.1,,22,dcuser,OCCCounters_Plugin
+SDP_1,127.0.0.1,,22,dcuser,SDP_Plugin
+#IVR_1,127.0.0.1,,22,dcuser,IVR_Plugin
+MINSAT_1,127.0.0.1,,22,dcuser,MINSATss_Plugin
+AddedNode,127.0.0.1,,22,dcuser,IVR_Plugin
